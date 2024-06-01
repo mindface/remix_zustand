@@ -1,0 +1,17 @@
+
+services:
+  remixtodo:
+    container_name: remixtodo
+    build: ./node
+    environment:
+      NODE_ENV: development
+    command: npm run dev --prefix todoer 
+    # command: bash -c "/bin/bash"
+    # command: yarn --cwd stre dev
+    volumes:
+      - ./src:/app
+    ports:
+      - "3000:3000"
+    tty: true
+
+
